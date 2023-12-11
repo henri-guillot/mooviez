@@ -7,3 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Cleaning database..."
+Movie.destroy_all
+
+puts "Creating movies..."
+titanic3 = {title: "titanic 3", description: "super!"}
+matrix6 =  {title: "matrix 6", description: "super! incredible!"}
+
+[titanic3, matrix6].each do |attributes|
+  movie = Movie.create!(attributes)
+  puts "Created #{movie.title}"
+end
+puts "Finished!"
