@@ -1,0 +1,19 @@
+
+<div class="container py-5">
+  <h1>My lists</h1>
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <%= link_to "Create a list", new_list_path, class: "btn btn-flat"%>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+    <div class="cards co-12 col-sm-6 col-md-4 mb-3">
+      <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://static4.depositphotos.com/1014680/303/i/600/depositphotos_3039676-stock-photo-bw-film-background.jpg)">
+        <%= link_to list_path(list), class:"text-decoration-none" do %>
+        <p><%= list.name %></p>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+</div>
+
+  <%= link_to "Home", root_path %>

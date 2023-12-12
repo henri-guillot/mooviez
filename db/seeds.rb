@@ -23,4 +23,11 @@ Movie.create(title: "The Shawshank Redemption", description: "Framed in the 1940
 Movie.create(title: "Titanic", description: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
 Movie.create(title: "Ocean's Eight", description: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
+List.create(name: "70s Movies")
+List.create(name: "80s Movies")
+List.create(name: "90s Movies")
+
+
+
 puts "Finished! Created #{Movie.count} movies"
+puts "Finished! Created #{List.count} lists"
