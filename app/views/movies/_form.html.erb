@@ -1,0 +1,8 @@
+<%= simple_form_for(@movie, local: true) do |form| %>
+  <%= form.input :title %>
+  <%= form.input :description %>
+  <%= form.input :rating %>
+  <%= form.input :poster_url %>
+
+  <%= form.button :submit %>
+<% end %>

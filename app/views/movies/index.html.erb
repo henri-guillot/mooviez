@@ -1,11 +1,26 @@
-<h1>Salut</h1>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">All Movies</h3>
+    <%= link_to "Create a movie", new_movie_path, class: "btn btn-flat" %>
+  </div>
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+          <div class="card-category d-flex align-items-center justify-content-between p-3 m-3" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
+            <div>
+              <%= link_to movie_path(movie), class:"text-decoration-none" do %>
+              <p><%= movie.title %></p>
+              <p>Rating: <%= movie.rating %></p>
+              <% end %>
+            </div>
+            <%= link_to "Delete",
+            movie_path(movie),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<ul>
-  <% @movies.each do |movie| %>
-    <li>
-    <%= movie.title %>
-    <%= movie.rating %>
-    <%= image_tag(movie.poster_url, alt: "movie image", class: "tbc") %>
-    </li>
-  <% end %>
-</ul>
+  <%= link_to "Home", root_path %>

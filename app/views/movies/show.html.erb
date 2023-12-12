@@ -1,0 +1,6 @@
+<h1><%= @movie.title %></h1>
+<p>Description: <%= @movie.description %></p>
+<p>Rating: <%= @movie.rating %></p>
+<%= image_tag(@movie.poster_url, alt: "movie image", class: "tbc") %>
+
+<%= link_to "Back to Movies", movies_path %>
